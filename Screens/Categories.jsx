@@ -3,11 +3,22 @@ import React from "react";
 import { CATEGORIES } from "../data/dummy-data";
 import CategoriesGrid from "../Components/CategoriesGrid";
 
+const Categories = ({ navigation }) => {
+  const renderCategories = (itemData) => {
+    function onPressCategory() {
+      navigation.navigate('Meals Overview',{
+        categoryId : itemData.item.id
+      });
+    }
 
-const renderCategories = (itemData) => {
-    return <CategoriesGrid title={itemData.item.title} color={itemData.item.color} id={itemData.item.id}/>;
-}
-const Categories = () => {
+    return (
+      <CategoriesGrid
+        title={itemData.item.title}
+        color={itemData.item.color}
+        onPress={onPressCategory}
+      />
+    );
+  };
   return (
     <View>
       <FlatList
