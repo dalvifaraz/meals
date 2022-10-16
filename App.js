@@ -1,5 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-import { SafeAreaView, StyleSheet, Text, View } from "react-native";
+import { Button, SafeAreaView, StyleSheet, Text, View } from "react-native";
 import Categories from "./Screens/Categories";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
@@ -28,8 +28,19 @@ export default function App() {
               title: "All Categories",
             }}
           />
-          <Stack.Screen name="MealsOverview" component={Meals} />
-        <Stack.Screen name="MealDetails" component={MealDeatils} />
+          <Stack.Screen
+            name="MealsOverview"
+            component={Meals}
+            options={{
+              headerRight: () => {
+                return <Button title="Tap Me!" />;
+              },
+            }}
+          />
+          <Stack.Screen
+            name="MealDetails"
+            component={MealDeatils}
+          />
         </Stack.Navigator>
       </NavigationContainer>
     </>
