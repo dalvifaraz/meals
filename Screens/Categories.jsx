@@ -6,7 +6,7 @@ import CategoriesGrid from "../Components/CategoriesGrid";
 const Categories = ({ navigation }) => {
   const renderCategories = (itemData) => {
     function onPressCategory() {
-      navigation.navigate('Meals Overview',{
+      navigation.navigate('MealsOverview',{
         categoryId : itemData.item.id
       });
     }
