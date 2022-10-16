@@ -21,6 +21,7 @@ const Meals = ({ route, navigation }) => {
 
   const renderMeals = (itemData) => {
     const mealsItemProps = {
+      id: itemData.item.id,
       title: itemData.item.title,
       imgUrl: itemData.item.imageUrl,
       duration: itemData.item.duration,
